@@ -1,0 +1,1178 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/ivanseidel/node-draftlog#readme"
+
+    >draftlog (v1.0.12)</a>
+</h1>
+<h4>Create updatable log lines into the terminal, and give life to your logs!</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.draftlog">module draftlog</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.draftlog">
+            function <span class="apidocSignatureSpan"></span>draftlog
+            <span class="apidocSignatureSpan">(console, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.LineCountStream">
+            function <span class="apidocSignatureSpan">draftlog.</span>LineCountStream
+            <span class="apidocSignatureSpan">(outStream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.LogDraft">
+            function <span class="apidocSignatureSpan">draftlog.</span>LogDraft
+            <span class="apidocSignatureSpan">(console, methodName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.into">
+            function <span class="apidocSignatureSpan">draftlog.</span>into
+            <span class="apidocSignatureSpan">(console, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">draftlog.</span>CSIHelper</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">draftlog.</span>LineCountStream.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">draftlog.</span>LogDraft.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">draftlog.</span>defaults</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.draftlog.CSIHelper">module draftlog.CSIHelper</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.CSIHelper.clearLine">
+            function <span class="apidocSignatureSpan">draftlog.CSIHelper.</span>clearLine
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.CSIHelper.down">
+            function <span class="apidocSignatureSpan">draftlog.CSIHelper.</span>down
+            <span class="apidocSignatureSpan">(n)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.CSIHelper.restore">
+            function <span class="apidocSignatureSpan">draftlog.CSIHelper.</span>restore
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.CSIHelper.save">
+            function <span class="apidocSignatureSpan">draftlog.CSIHelper.</span>save
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.CSIHelper.up">
+            function <span class="apidocSignatureSpan">draftlog.CSIHelper.</span>up
+            <span class="apidocSignatureSpan">(n)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">draftlog.CSIHelper.</span>ESC</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.draftlog.LineCountStream">module draftlog.LineCountStream</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.LineCountStream.LineCountStream">
+            function <span class="apidocSignatureSpan">draftlog.</span>LineCountStream
+            <span class="apidocSignatureSpan">(outStream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.LineCountStream.super_">
+            function <span class="apidocSignatureSpan">draftlog.LineCountStream.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.draftlog.LineCountStream.prototype">module draftlog.LineCountStream.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.LineCountStream.prototype.addLineListener">
+            function <span class="apidocSignatureSpan">draftlog.LineCountStream.prototype.</span>addLineListener
+            <span class="apidocSignatureSpan">(inStream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.LineCountStream.prototype.columns">
+            function <span class="apidocSignatureSpan">draftlog.LineCountStream.prototype.</span>columns
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.LineCountStream.prototype.countLines">
+            function <span class="apidocSignatureSpan">draftlog.LineCountStream.prototype.</span>countLines
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.LineCountStream.prototype.line">
+            function <span class="apidocSignatureSpan">draftlog.LineCountStream.prototype.</span>line
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.LineCountStream.prototype.logs">
+            function <span class="apidocSignatureSpan">draftlog.LineCountStream.prototype.</span>logs
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.LineCountStream.prototype.resumeLineCount">
+            function <span class="apidocSignatureSpan">draftlog.LineCountStream.prototype.</span>resumeLineCount
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.LineCountStream.prototype.rows">
+            function <span class="apidocSignatureSpan">draftlog.LineCountStream.prototype.</span>rows
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.LineCountStream.prototype.stopLineCount">
+            function <span class="apidocSignatureSpan">draftlog.LineCountStream.prototype.</span>stopLineCount
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.LineCountStream.prototype.write">
+            function <span class="apidocSignatureSpan">draftlog.LineCountStream.prototype.</span>write
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.draftlog.LogDraft">module draftlog.LogDraft</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.LogDraft.LogDraft">
+            function <span class="apidocSignatureSpan">draftlog.</span>LogDraft
+            <span class="apidocSignatureSpan">(console, methodName)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.draftlog.LogDraft.prototype">module draftlog.LogDraft.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.LogDraft.prototype.isOffScreen">
+            function <span class="apidocSignatureSpan">draftlog.LogDraft.prototype.</span>isOffScreen
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.LogDraft.prototype.linesUp">
+            function <span class="apidocSignatureSpan">draftlog.LogDraft.prototype.</span>linesUp
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.LogDraft.prototype.saveLine">
+            function <span class="apidocSignatureSpan">draftlog.LogDraft.prototype.</span>saveLine
+            <span class="apidocSignatureSpan">(relative)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.LogDraft.prototype.update">
+            function <span class="apidocSignatureSpan">draftlog.LogDraft.prototype.</span>update
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.LogDraft.prototype.write">
+            function <span class="apidocSignatureSpan">draftlog.LogDraft.prototype.</span>write
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.draftlog.into">module draftlog.into</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.into.into">
+            function <span class="apidocSignatureSpan">draftlog.</span>into
+            <span class="apidocSignatureSpan">(console, extra)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.into.LineCountStream">
+            function <span class="apidocSignatureSpan">draftlog.into.</span>LineCountStream
+            <span class="apidocSignatureSpan">(outStream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.draftlog.into.LogDraft">
+            function <span class="apidocSignatureSpan">draftlog.into.</span>LogDraft
+            <span class="apidocSignatureSpan">(console, methodName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">draftlog.into.</span>CSIHelper</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">draftlog.into.</span>defaults</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.draftlog" id="apidoc.module.draftlog">module draftlog</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.draftlog" id="apidoc.element.draftlog.draftlog">
+        function <span class="apidocSignatureSpan"></span>draftlog
+        <span class="apidocSignatureSpan">(console, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function into(console, extra) {
+  // If extra is set to `true`, it&#x27;s production mode
+  var production = (extra === true ? true : false)
+
+  // If production mode, mock api
+  if (production) {
+    // Mock draft and set is as console.log
+    console.draft = function draft() {
+      // Log this
+      console.log.apply(null, arguments)
+
+      // Return usual console.log method
+      return console.log.bind(console)
+    }
+    return
+  }
+
+  // Transform stdout from console to LineCounter
+  var lineCountStream = LineCountStream(console._stdout)
+  console._stdout = lineCountStream
+
+  // Can it bind to process.stdin automatically?
+  if (defaults.stdinAutoBind) {
+    lineCountStream.addLineListener(process.stdin)
+  }
+
+  // Add &#x22;draft&#x22; to console
+  console.draft = console.draft || function draft() {
+    // Create Draft at this point in time
+    var logDraft = new LogDraft(console, &#x27;log&#x27;)
+
+    // Log first
+    logDraft.write.apply(logDraft, arguments)
+
+    // Return update function
+    return logDraft.update.bind(logDraft)
+  }
+
+  // Return the created Transform Stream
+  return lineCountStream
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.LineCountStream" id="apidoc.element.draftlog.LineCountStream">
+        function <span class="apidocSignatureSpan">draftlog.</span>LineCountStream
+        <span class="apidocSignatureSpan">(outStream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LineCountStream(outStream) {
+  // Checks if the outStream is already a LineCountStream. If so, return it
+  if (outStream instanceof LineCountStream)
+    return outStream
+
+  // Make sure this is a new instance
+  if (!(this instanceof LineCountStream))
+    return new LineCountStream(outStream)
+
+  // Call super constructor
+  PassThrough.call(this)
+
+  // Save outStream
+  this._outStream = outStream
+
+  // Initialize line and logs (line starts as 1)
+  this._line = 1
+  this._logs = 0
+
+  // Flag indicating a change is being made not with current cursor
+  this._editing = false
+
+  // Pipe this data to output stream
+  outStream &#x26;&#x26; this.pipe(outStream)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.LogDraft" id="apidoc.element.draftlog.LogDraft">
+        function <span class="apidocSignatureSpan">draftlog.</span>LogDraft
+        <span class="apidocSignatureSpan">(console, methodName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LogDraft(console, methodName) {
+  this._stream = console._stdout
+  this._styleFn = console[methodName]
+
+  // Valid flag. If set to false, should NOT write anymore
+  this.valid = true
+
+  // Save line where content will be saved
+  this.saveLine()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.into" id="apidoc.element.draftlog.into">
+        function <span class="apidocSignatureSpan">draftlog.</span>into
+        <span class="apidocSignatureSpan">(console, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function into(console, extra) {
+  // If extra is set to `true`, it&#x27;s production mode
+  var production = (extra === true ? true : false)
+
+  // If production mode, mock api
+  if (production) {
+    // Mock draft and set is as console.log
+    console.draft = function draft() {
+      // Log this
+      console.log.apply(null, arguments)
+
+      // Return usual console.log method
+      return console.log.bind(console)
+    }
+    return
+  }
+
+  // Transform stdout from console to LineCounter
+  var lineCountStream = LineCountStream(console._stdout)
+  console._stdout = lineCountStream
+
+  // Can it bind to process.stdin automatically?
+  if (defaults.stdinAutoBind) {
+    lineCountStream.addLineListener(process.stdin)
+  }
+
+  // Add &#x22;draft&#x22; to console
+  console.draft = console.draft || function draft() {
+    // Create Draft at this point in time
+    var logDraft = new LogDraft(console, &#x27;log&#x27;)
+
+    // Log first
+    logDraft.write.apply(logDraft, arguments)
+
+    // Return update function
+    return logDraft.update.bind(logDraft)
+  }
+
+  // Return the created Transform Stream
+  return lineCountStream
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+// Setup
+const DraftLog = require(&#x27;draftlog&#x27;)
+DraftLog(console)
+
+// Or, in a single line:
+require(&#x27;draftlog&#x27;).<span class="apidocCodeKeywordSpan">into</span>(console)
+
+// Account for manual line breaks with:
+require(&#x27;draftlog&#x27;).into(console).addLineListener(process.stdin)
+```
+
+To create a updatable log, use the `draft` method injected into the provided `console`:
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.draftlog.CSIHelper" id="apidoc.module.draftlog.CSIHelper">module draftlog.CSIHelper</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.CSIHelper.clearLine" id="apidoc.element.draftlog.CSIHelper.clearLine">
+        function <span class="apidocSignatureSpan">draftlog.CSIHelper.</span>clearLine
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function clearLine() {
+  return ESC + &#x27;[2K&#x27; + ESC + &#x27;[1G&#x27;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.CSIHelper.down" id="apidoc.element.draftlog.CSIHelper.down">
+        function <span class="apidocSignatureSpan">draftlog.CSIHelper.</span>down
+        <span class="apidocSignatureSpan">(n)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function down(n) {
+  n = typeof n === &#x27;number&#x27; ? n : 1
+  return n &#x3e; 0 ? ESC + &#x27;[&#x27; + n + &#x27;B&#x27; : &#x27;&#x27;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.CSIHelper.restore" id="apidoc.element.draftlog.CSIHelper.restore">
+        function <span class="apidocSignatureSpan">draftlog.CSIHelper.</span>restore
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function restore() {
+  return &#x27;\u001b8&#x27;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.CSIHelper.save" id="apidoc.element.draftlog.CSIHelper.save">
+        function <span class="apidocSignatureSpan">draftlog.CSIHelper.</span>save
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function save() {
+  return &#x27;\u001b7&#x27;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.CSIHelper.up" id="apidoc.element.draftlog.CSIHelper.up">
+        function <span class="apidocSignatureSpan">draftlog.CSIHelper.</span>up
+        <span class="apidocSignatureSpan">(n)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function up(n) {
+  n = typeof n === &#x27;number&#x27; ? n : 1
+  return n &#x3e; 0 ? ESC + &#x27;[&#x27; + n + &#x27;A&#x27; : &#x27;&#x27;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.draftlog.LineCountStream" id="apidoc.module.draftlog.LineCountStream">module draftlog.LineCountStream</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.LineCountStream.LineCountStream" id="apidoc.element.draftlog.LineCountStream.LineCountStream">
+        function <span class="apidocSignatureSpan">draftlog.</span>LineCountStream
+        <span class="apidocSignatureSpan">(outStream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LineCountStream(outStream) {
+  // Checks if the outStream is already a LineCountStream. If so, return it
+  if (outStream instanceof LineCountStream)
+    return outStream
+
+  // Make sure this is a new instance
+  if (!(this instanceof LineCountStream))
+    return new LineCountStream(outStream)
+
+  // Call super constructor
+  PassThrough.call(this)
+
+  // Save outStream
+  this._outStream = outStream
+
+  // Initialize line and logs (line starts as 1)
+  this._line = 1
+  this._logs = 0
+
+  // Flag indicating a change is being made not with current cursor
+  this._editing = false
+
+  // Pipe this data to output stream
+  outStream &#x26;&#x26; this.pipe(outStream)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.LineCountStream.super_" id="apidoc.element.draftlog.LineCountStream.super_">
+        function <span class="apidocSignatureSpan">draftlog.LineCountStream.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PassThrough(options) {
+  if (!(this instanceof PassThrough))
+    return new PassThrough(options);
+
+  Transform.call(this, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.draftlog.LineCountStream.prototype" id="apidoc.module.draftlog.LineCountStream.prototype">module draftlog.LineCountStream.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.LineCountStream.prototype.addLineListener" id="apidoc.element.draftlog.LineCountStream.prototype.addLineListener">
+        function <span class="apidocSignatureSpan">draftlog.LineCountStream.prototype.</span>addLineListener
+        <span class="apidocSignatureSpan">(inStream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function addLineListener(inStream) {
+  // Binds to &#x27;data&#x27; event
+  inStream.on(&#x27;data&#x27;, this.countLines.bind(this))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+const DraftLog = require(&#x27;draftlog&#x27;)
+DraftLog(console)
+
+// Or, in a single line:
+require(&#x27;draftlog&#x27;).into(console)
+
+// Account for manual line breaks with:
+require(&#x27;draftlog&#x27;).into(console).<span class="apidocCodeKeywordSpan">addLineListener</span>(process.stdin)
+```
+
+To create a updatable log, use the `draft` method injected into the provided `console`:
+
+```javascript
+// Create a Draft log
+var update = console.draft(&#x27;Hy, my name is&#x27;)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.LineCountStream.prototype.columns" id="apidoc.element.draftlog.LineCountStream.prototype.columns">
+        function <span class="apidocSignatureSpan">draftlog.LineCountStream.prototype.</span>columns
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function columns() {
+  return this._outStream.columns
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.LineCountStream.prototype.countLines" id="apidoc.element.draftlog.LineCountStream.prototype.countLines">
+        function <span class="apidocSignatureSpan">draftlog.LineCountStream.prototype.</span>countLines
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function countLines(data) {
+  var dataLines = (data.toString().split(&#x27;\n&#x27;).length - 1)
+  this._logs++
+  this._line += dataLines || 0
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.LineCountStream.prototype.line" id="apidoc.element.draftlog.LineCountStream.prototype.line">
+        function <span class="apidocSignatureSpan">draftlog.LineCountStream.prototype.</span>line
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function line() {
+  return this._line
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.LineCountStream.prototype.logs" id="apidoc.element.draftlog.LineCountStream.prototype.logs">
+        function <span class="apidocSignatureSpan">draftlog.LineCountStream.prototype.</span>logs
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function logs() {
+  return this._logs
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.LineCountStream.prototype.resumeLineCount" id="apidoc.element.draftlog.LineCountStream.prototype.resumeLineCount">
+        function <span class="apidocSignatureSpan">draftlog.LineCountStream.prototype.</span>resumeLineCount
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function resumeLineCount() {
+  this._editing = false
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.LineCountStream.prototype.rows" id="apidoc.element.draftlog.LineCountStream.prototype.rows">
+        function <span class="apidocSignatureSpan">draftlog.LineCountStream.prototype.</span>rows
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function rows() {
+  return this._outStream.rows
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.LineCountStream.prototype.stopLineCount" id="apidoc.element.draftlog.LineCountStream.prototype.stopLineCount">
+        function <span class="apidocSignatureSpan">draftlog.LineCountStream.prototype.</span>stopLineCount
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function stopLineCount() {
+  this._editing = true
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.LineCountStream.prototype.write" id="apidoc.element.draftlog.LineCountStream.prototype.write">
+        function <span class="apidocSignatureSpan">draftlog.LineCountStream.prototype.</span>write
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function write(data) {
+  if (! this._editing) {
+    this.countLines(data)
+  }
+  this.push(data)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.draftlog.LogDraft" id="apidoc.module.draftlog.LogDraft">module draftlog.LogDraft</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.LogDraft.LogDraft" id="apidoc.element.draftlog.LogDraft.LogDraft">
+        function <span class="apidocSignatureSpan">draftlog.</span>LogDraft
+        <span class="apidocSignatureSpan">(console, methodName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LogDraft(console, methodName) {
+  this._stream = console._stdout
+  this._styleFn = console[methodName]
+
+  // Valid flag. If set to false, should NOT write anymore
+  this.valid = true
+
+  // Save line where content will be saved
+  this.saveLine()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.draftlog.LogDraft.prototype" id="apidoc.module.draftlog.LogDraft.prototype">module draftlog.LogDraft.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.LogDraft.prototype.isOffScreen" id="apidoc.element.draftlog.LogDraft.prototype.isOffScreen">
+        function <span class="apidocSignatureSpan">draftlog.LogDraft.prototype.</span>isOffScreen
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isOffScren() {
+  var rows = this._stream.rows() || defaults.maximumLinesUp
+  return this._stream.rows() &#x3c;= this.linesUp()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.LogDraft.prototype.linesUp" id="apidoc.element.draftlog.LogDraft.prototype.linesUp">
+        function <span class="apidocSignatureSpan">draftlog.LogDraft.prototype.</span>linesUp
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function linesUp() {
+  return this._stream.line() - this._line
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.LogDraft.prototype.saveLine" id="apidoc.element.draftlog.LogDraft.prototype.saveLine">
+        function <span class="apidocSignatureSpan">draftlog.LogDraft.prototype.</span>saveLine
+        <span class="apidocSignatureSpan">(relative)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function saveLine(relative) {
+  relative = relative || 0
+  this._line = this._stream.line() + relative
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.LogDraft.prototype.update" id="apidoc.element.draftlog.LogDraft.prototype.update">
+        function <span class="apidocSignatureSpan">draftlog.LogDraft.prototype.</span>update
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function update() {
+  // Get line difference
+  var linesUp = this.linesUp()
+
+  // Check if is offscreen
+  if (this.isOffScreen()) {
+    if (defaults.canReWrite) {
+      // It can be rewritten, move line to current cursor line, and keep updating
+      this.saveLine(-1)
+    } else {
+      // Invalidate and prevent writting
+      this.valid = false
+      return;
+    }
+  }
+
+  // Start editing stream
+  this._stream.stopLineCount()
+
+  // Save state (if content is not null)
+  this._stream.write(CSIHelper.save())
+
+  // Move up cursor up
+  this._stream.write(CSIHelper.up(linesUp))
+
+  // Clear line
+  this._stream.write(CSIHelper.clearLine())
+
+  // Call write function
+  this.write.apply(this, arguments)
+
+  // Restore state
+  this._stream.write(CSIHelper.restore())
+
+  // Resume counting lines
+  this._stream.resumeLineCount()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.LogDraft.prototype.write" id="apidoc.element.draftlog.LogDraft.prototype.write">
+        function <span class="apidocSignatureSpan">draftlog.LogDraft.prototype.</span>write
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function write() {
+  this.valid &#x26;&#x26; this._styleFn.apply(this._styleFn, arguments)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.draftlog.into" id="apidoc.module.draftlog.into">module draftlog.into</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.into.into" id="apidoc.element.draftlog.into.into">
+        function <span class="apidocSignatureSpan">draftlog.</span>into
+        <span class="apidocSignatureSpan">(console, extra)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function into(console, extra) {
+  // If extra is set to `true`, it&#x27;s production mode
+  var production = (extra === true ? true : false)
+
+  // If production mode, mock api
+  if (production) {
+    // Mock draft and set is as console.log
+    console.draft = function draft() {
+      // Log this
+      console.log.apply(null, arguments)
+
+      // Return usual console.log method
+      return console.log.bind(console)
+    }
+    return
+  }
+
+  // Transform stdout from console to LineCounter
+  var lineCountStream = LineCountStream(console._stdout)
+  console._stdout = lineCountStream
+
+  // Can it bind to process.stdin automatically?
+  if (defaults.stdinAutoBind) {
+    lineCountStream.addLineListener(process.stdin)
+  }
+
+  // Add &#x22;draft&#x22; to console
+  console.draft = console.draft || function draft() {
+    // Create Draft at this point in time
+    var logDraft = new LogDraft(console, &#x27;log&#x27;)
+
+    // Log first
+    logDraft.write.apply(logDraft, arguments)
+
+    // Return update function
+    return logDraft.update.bind(logDraft)
+  }
+
+  // Return the created Transform Stream
+  return lineCountStream
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+// Setup
+const DraftLog = require(&#x27;draftlog&#x27;)
+DraftLog(console)
+
+// Or, in a single line:
+require(&#x27;draftlog&#x27;).<span class="apidocCodeKeywordSpan">into</span>(console)
+
+// Account for manual line breaks with:
+require(&#x27;draftlog&#x27;).into(console).addLineListener(process.stdin)
+```
+
+To create a updatable log, use the `draft` method injected into the provided `console`:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.into.LineCountStream" id="apidoc.element.draftlog.into.LineCountStream">
+        function <span class="apidocSignatureSpan">draftlog.into.</span>LineCountStream
+        <span class="apidocSignatureSpan">(outStream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LineCountStream(outStream) {
+  // Checks if the outStream is already a LineCountStream. If so, return it
+  if (outStream instanceof LineCountStream)
+    return outStream
+
+  // Make sure this is a new instance
+  if (!(this instanceof LineCountStream))
+    return new LineCountStream(outStream)
+
+  // Call super constructor
+  PassThrough.call(this)
+
+  // Save outStream
+  this._outStream = outStream
+
+  // Initialize line and logs (line starts as 1)
+  this._line = 1
+  this._logs = 0
+
+  // Flag indicating a change is being made not with current cursor
+  this._editing = false
+
+  // Pipe this data to output stream
+  outStream &#x26;&#x26; this.pipe(outStream)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.draftlog.into.LogDraft" id="apidoc.element.draftlog.into.LogDraft">
+        function <span class="apidocSignatureSpan">draftlog.into.</span>LogDraft
+        <span class="apidocSignatureSpan">(console, methodName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LogDraft(console, methodName) {
+  this._stream = console._stdout
+  this._styleFn = console[methodName]
+
+  // Valid flag. If set to false, should NOT write anymore
+  this.valid = true
+
+  // Save line where content will be saved
+  this.saveLine()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
